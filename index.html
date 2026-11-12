@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sito divulgativo del Modulo 5 di Elettronica: linee di trasmissione, antenne, modulazioni AM/FM e laboratorio. Per studenti di quinta ITIS.">
+  <meta name="color-scheme" content="light dark">
+  <title>L'Invisibile in Rete · Linee, Antenne e Telecomunicazioni</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#contenuto">Vai al contenuto</a>
+<header class="site-nav">
+  <div class="container">
+    <a class="brand" href="#top">L'Invisibile <span>in Rete</span></a>
+    <nav aria-label="Sezioni del modulo">
+      <ul class="nav-links">
+        <li><a href="#fisica">1 · Fisica</a></li>
+        <li><a href="#linee">2 · Linee</a></li>
+        <li><a href="#antenne">3 · Antenne</a></li>
+        <li><a href="#modulazioni">4 · AM/FM</a></li>
+        <li><a href="#laboratorio">5 · Laboratorio</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="contenuto">
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="container">
+    <p class="eyebrow">Elettronica · Modulo 5 · Classe 5ª ITIS</p>
+    <h1>L'Invisibile in Rete</h1>
+    <p class="lead">Dal cavo di rame allo spazio libero: come le onde elettromagnetiche portano voce, dati e immagini attraverso il mondo interconnesso. Un percorso in cinque tappe, con formule, esempi numerici e qualche esperimento da fare.</p>
+    <a class="cta" href="#fisica">Inizia il percorso <span aria-hidden="true">→</span></a>
+  </div>
+</header>
+<!-- ================= ROADMAP ================= -->
+<section class="topic" id="intro" aria-labelledby="intro-title">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-kicker">Il percorso</p>
+      <h2 id="intro-title">Una mappa del corso</h2>
+      <p>Il programma biennale di telecomunicazioni prevede 80 ore complessive. Questo modulo segue il filo logico che va dai fondamenti fisici fino alla comunicazione reale.</p>
+    </div>
+    <ol class="roadmap">
+      <li><span class="step">1</span><strong>Fondamenti</strong><span>Fisica dei campi e trigonometria dell'onda.</span></li>
+      <li><span class="step">2</span><strong>Linee</strong><span>10 lezioni frontali: trasporto guidato e adattamento.</span></li>
+      <li><span class="step">3</span><strong>Antenne</strong><span>10 lezioni frontali: irradiazione nello spazio libero.</span></li>
+      <li><span class="step">4</span><strong>Modulazione</strong><span>Come "imprimere" e "estrarre" un messaggio dall'onda.</span></li>
+      <li><span class="step">5</span><strong>Ricerca</strong><span>5 ore di laboratorio sul campo, con strumenti reali.</span></li>
+    </ol>
+  </div>
+</section>
+<!-- ================= 1. FISICA ================= -->
+<section class="topic" id="fisica" aria-labelledby="fisica-title">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-kicker">Sezione 1</p>
+      <h2 id="fisica-title">Fisica ed elettromagnetismo</h2>
+      <p>Tutto nasce da due campi: quello elettrico, prodotto dalle cariche, e quello magnetico, prodotto dalle cariche in moto. Insieme, si sostengono a vicenda e viaggiano nello spazio.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="tag">Campo elettrico</span>
+        <h4>Generato da cariche statiche</h4>
+        <p>Una carica "sente" una forza in ogni punto dello spazio attorno a sé. Il campo <em>E</em> si misura in V/m.</p>
+      </article>
+      <article class="card">
+        <span class="tag">Campo magnetico</span>
+        <h4>Generato da cariche in moto</h4>
+        <p>Una corrente crea un campo magnetico <em>B</em> (in tesla, T). È la base di bobine, trasformatori e antenne.</p>
+      </article>
+      <article class="card accent">
+        <span class="tag">Sintesi di Maxwell</span>
+        <h4>Campi concatenati e auto-sostenuti</h4>
+        <p>Un campo elettrico variabile genera un campo magnetico variabile, che a sua volta genera un campo elettrico. Il ciclo si ripete e l'onda si propaga anche senza cariche vicine.</p>
+      </article>
+    </div>
+    <h3>Come viaggia l'onda</h3>
+    <figure>
+      <svg viewBox="0 0 600 310" role="img" aria-labelledby="fig-onda-t">
+        <title id="fig-onda-t">Schema di un'onda elettromagnetica: campo elettrico E e campo magnetico B oscillano in fase, perpendicolari tra loro e alla direzione di propagazione</title>
+        <!-- campo E -->
+        <g transform="translate(0,70)">
+          <line class="svg-axis" x1="20" y1="0" x2="580" y2="0"/>
+          <path class="svg-line" d="M20.0,-0.0 L22.3,-3.1 L24.7,-6.3 L27.0,-9.4 L29.3,-12.5 L31.7,-15.5 L34.0,-18.5 L36.3,-21.5 L38.7,-24.4 L41.0,-27.2 L43.3,-30.0 L45.7,-32.7 L48.0,-35.3 L50.3,-37.8 L52.7,-40.1 L55.0,-42.4 L57.3,-44.6 L59.7,-46.6 L62.0,-48.5 L64.3,-50.3 L66.7,-52.0 L69.0,-53.5 L71.3,-54.8 L73.7,-56.0 L76.0,-57.1 L78.3,-58.0 L80.7,-58.7 L83.0,-59.3 L85.3,-59.7 L87.7,-59.9 L90.0,-60.0 L92.3,-59.9 L94.7,-59.7 L97.0,-59.3 L99.3,-58.7 L101.7,-58.0 L104.0,-57.1 L106.3,-56.0 L108.7,-54.8 L111.0,-53.5 L113.3,-52.0 L115.7,-50.3 L118.0,-48.5 L120.3,-46.6 L122.7,-44.6 L125.0,-42.4 L127.3,-40.1 L129.7,-37.8 L132.0,-35.3 L134.3,-32.7 L136.7,-30.0 L139.0,-27.2 L141.3,-24.4 L143.7,-21.5 L146.0,-18.5 L148.3,-15.5 L150.7,-12.5 L153.0,-9.4 L155.3,-6.3 L157.7,-3.1 L160.0,-0.0 L162.3,3.1 L164.7,6.3 L167.0,9.4 L169.3,12.5 L171.7,15.5 L174.0,18.5 L176.3,21.5 L178.7,24.4 L181.0,27.2 L183.3,30.0 L185.7,32.7 L188.0,35.3 L190.3,37.8 L192.7,40.1 L195.0,42.4 L197.3,44.6 L199.7,46.6 L202.0,48.5 L204.3,50.3 L206.7,52.0 L209.0,53.5 L211.3,54.8 L213.7,56.0 L216.0,57.1 L218.3,58.0 L220.7,58.7 L223.0,59.3 L225.3,59.7 L227.7,59.9 L230.0,60.0 L232.3,59.9 L234.7,59.7 L237.0,59.3 L239.3,58.7 L241.7,58.0 L244.0,57.1 L246.3,56.0 L248.7,54.8 L251.0,53.5 L253.3,52.0 L255.7,50.3 L258.0,48.5 L260.3,46.6 L262.7,44.6 L265.0,42.4 L267.3,40.1 L269.7,37.8 L272.0,35.3 L274.3,32.7 L276.7,30.0 L279.0,27.2 L281.3,24.4 L283.7,21.5 L286.0,18.5 L288.3,15.5 L290.7,12.5 L293.0,9.4 L295.3,6.3 L297.7,3.1 L300.0,0.0 L302.3,-3.1 L304.7,-6.3 L307.0,-9.4 L309.3,-12.5 L311.7,-15.5 L314.0,-18.5 L316.3,-21.5 L318.7,-24.4 L321.0,-27.2 L323.3,-30.0 L325.7,-32.7 L328.0,-35.3 L330.3,-37.8 L332.7,-40.1 L335.0,-42.4 L337.3,-44.6 L339.7,-46.6 L342.0,-48.5 L344.3,-50.3 L346.7,-52.0 L349.0,-53.5 L351.3,-54.8 L353.7,-56.0 L356.0,-57.1 L358.3,-58.0 L360.7,-58.7 L363.0,-59.3 L365.3,-59.7 L367.7,-59.9 L370.0,-60.0 L372.3,-59.9 L374.7,-59.7 L377.0,-59.3 L379.3,-58.7 L381.7,-58.0 L384.0,-57.1 L386.3,-56.0 L388.7,-54.8 L391.0,-53.5 L393.3,-52.0 L395.7,-50.3 L398.0,-48.5 L400.3,-46.6 L402.7,-44.6 L405.0,-42.4 L407.3,-40.1 L409.7,-37.8 L412.0,-35.3 L414.3,-32.7 L416.7,-30.0 L419.0,-27.2 L421.3,-24.4 L423.7,-21.5 L426.0,-18.5 L428.3,-15.5 L430.7,-12.5 L433.0,-9.4 L435.3,-6.3 L437.7,-3.1 L440.0,-0.0 L442.3,3.1 L444.7,6.3 L447.0,9.4 L449.3,12.5 L451.7,15.5 L454.0,18.5 L456.3,21.5 L458.7,24.4 L461.0,27.2 L463.3,30.0 L465.7,32.7 L468.0,35.3 L470.3,37.8 L472.7,40.1 L475.0,42.4 L477.3,44.6 L479.7,46.6 L482.0,48.5 L484.3,50.3 L486.7,52.0 L489.0,53.5 L491.3,54.8 L493.7,56.0 L496.0,57.1 L498.3,58.0 L500.7,58.7 L503.0,59.3 L505.3,59.7 L507.7,59.9 L510.0,60.0 L512.3,59.9 L514.7,59.7 L517.0,59.3 L519.3,58.7 L521.7,58.0 L524.0,57.1 L526.3,56.0 L528.7,54.8 L531.0,53.5 L533.3,52.0 L535.7,50.3 L538.0,48.5 L540.3,46.6 L542.7,44.6 L545.0,42.4 L547.3,40.1 L549.7,37.8 L552.0,35.3 L554.3,32.7 L556.7,30.0 L559.0,27.2 L561.3,24.4 L563.7,21.5 L566.0,18.5 L568.3,15.5 L570.7,12.5 L573.0,9.4 L575.3,6.3 L577.7,3.1 L580.0,0.0"/>
+        </g>
+        <text class="svg-text" x="20" y="150">E · campo elettrico (oscilla in verticale)</text>
+        <!-- campo B -->
+        <g transform="translate(0,215)">
+          <line class="svg-axis" x1="20" y1="0" x2="580" y2="0"/>
+          <path class="svg-line-2" d="M20.0,-0.0 L22.3,-3.1 L24.7,-6.3 L27.0,-9.4 L29.3,-12.5 L31.7,-15.5 L34.0,-18.5 L36.3,-21.5 L38.7,-24.4 L41.0,-27.2 L43.3,-30.0 L45.7,-32.7 L48.0,-35.3 L50.3,-37.8 L52.7,-40.1 L55.0,-42.4 L57.3,-44.6 L59.7,-46.6 L62.0,-48.5 L64.3,-50.3 L66.7,-52.0 L69.0,-53.5 L71.3,-54.8 L73.7,-56.0 L76.0,-57.1 L78.3,-58.0 L80.7,-58.7 L83.0,-59.3 L85.3,-59.7 L87.7,-59.9 L90.0,-60.0 L92.3,-59.9 L94.7,-59.7 L97.0,-59.3 L99.3,-58.7 L101.7,-58.0 L104.0,-57.1 L106.3,-56.0 L108.7,-54.8 L111.0,-53.5 L113.3,-52.0 L115.7,-50.3 L118.0,-48.5 L120.3,-46.6 L122.7,-44.6 L125.0,-42.4 L127.3,-40.1 L129.7,-37.8 L132.0,-35.3 L134.3,-32.7 L136.7,-30.0 L139.0,-27.2 L141.3,-24.4 L143.7,-21.5 L146.0,-18.5 L148.3,-15.5 L150.7,-12.5 L153.0,-9.4 L155.3,-6.3 L157.7,-3.1 L160.0,-0.0 L162.3,3.1 L164.7,6.3 L167.0,9.4 L169.3,12.5 L171.7,15.5 L174.0,18.5 L176.3,21.5 L178.7,24.4 L181.0,27.2 L183.3,30.0 L185.7,32.7 L188.0,35.3 L190.3,37.8 L192.7,40.1 L195.0,42.4 L197.3,44.6 L199.7,46.6 L202.0,48.5 L204.3,50.3 L206.7,52.0 L209.0,53.5 L211.3,54.8 L213.7,56.0 L216.0,57.1 L218.3,58.0 L220.7,58.7 L223.0,59.3 L225.3,59.7 L227.7,59.9 L230.0,60.0 L232.3,59.9 L234.7,59.7 L237.0,59.3 L239.3,58.7 L241.7,58.0 L244.0,57.1 L246.3,56.0 L248.7,54.8 L251.0,53.5 L253.3,52.0 L255.7,50.3 L258.0,48.5 L260.3,46.6 L262.7,44.6 L265.0,42.4 L267.3,40.1 L269.7,37.8 L272.0,35.3 L274.3,32.7 L276.7,30.0 L279.0,27.2 L281.3,24.4 L283.7,21.5 L286.0,18.5 L288.3,15.5 L290.7,12.5 L293.0,9.4 L295.3,6.3 L297.7,3.1 L300.0,0.0 L302.3,-3.1 L304.7,-6.3 L307.0,-9.4 L309.3,-12.5 L311.7,-15.5 L314.0,-18.5 L316.3,-21.5 L318.7,-24.4 L321.0,-27.2 L323.3,-30.0 L325.7,-32.7 L328.0,-35.3 L330.3,-37.8 L332.7,-40.1 L335.0,-42.4 L337.3,-44.6 L339.7,-46.6 L342.0,-48.5 L344.3,-50.3 L346.7,-52.0 L349.0,-53.5 L351.3,-54.8 L353.7,-56.0 L356.0,-57.1 L358.3,-58.0 L360.7,-58.7 L363.0,-59.3 L365.3,-59.7 L367.7,-59.9 L370.0,-60.0 L372.3,-59.9 L374.7,-59.7 L377.0,-59.3 L379.3,-58.7 L381.7,-58.0 L384.0,-57.1 L386.3,-56.0 L388.7,-54.8 L391.0,-53.5 L393.3,-52.0 L395.7,-50.3 L398.0,-48.5 L400.3,-46.6 L402.7,-44.6 L405.0,-42.4 L407.3,-40.1 L409.7,-37.8 L412.0,-35.3 L414.3,-32.7 L416.7,-30.0 L419.0,-27.2 L421.3,-24.4 L423.7,-21.5 L426.0,-18.5 L428.3,-15.5 L430.7,-12.5 L433.0,-9.4 L435.3,-6.3 L437.7,-3.1 L440.0,-0.0 L442.3,3.1 L444.7,6.3 L447.0,9.4 L449.3,12.5 L451.7,15.5 L454.0,18.5 L456.3,21.5 L458.7,24.4 L461.0,27.2 L463.3,30.0 L465.7,32.7 L468.0,35.3 L470.3,37.8 L472.7,40.1 L475.0,42.4 L477.3,44.6 L479.7,46.6 L482.0,48.5 L484.3,50.3 L486.7,52.0 L489.0,53.5 L491.3,54.8 L493.7,56.0 L496.0,57.1 L498.3,58.0 L500.7,58.7 L503.0,59.3 L505.3,59.7 L507.7,59.9 L510.0,60.0 L512.3,59.9 L514.7,59.7 L517.0,59.3 L519.3,58.7 L521.7,58.0 L524.0,57.1 L526.3,56.0 L528.7,54.8 L531.0,53.5 L533.3,52.0 L535.7,50.3 L538.0,48.5 L540.3,46.6 L542.7,44.6 L545.0,42.4 L547.3,40.1 L549.7,37.8 L552.0,35.3 L554.3,32.7 L556.7,30.0 L559.0,27.2 L561.3,24.4 L563.7,21.5 L566.0,18.5 L568.3,15.5 L570.7,12.5 L573.0,9.4 L575.3,6.3 L577.7,3.1 L580.0,0.0"/>
+        </g>
+        <text class="svg-text" x="20" y="296">B · campo magnetico (ortogonale a E)</text>
+      </svg>
+      <figcaption>Schema semplificato: E e B sono perpendicolari tra loro e alla direzione di propagazione (trasversalità). Nel vuoto viaggiano a c ≈ 300 000 km/s.</figcaption>
+    </figure>
+    <div class="grid">
+      <article class="card">
+        <span class="tag">Propagazione</span>
+        <h4>Velocità limite</h4>
+        <p>Nel vuoto, c ≈ 3 · 10<sup>8</sup> m/s. Legame fondamentale con lunghezza d'onda e frequenza:</p>
+        <div class="formula"><span class="label">Relazione fondamentale</span>λ = c / f</div>
+      </article>
+      <article class="card">
+        <span class="tag">Polarizzazione</span>
+        <h4>Orientamento del campo E</h4>
+        <p>La polarizzazione è definita dalla direzione di oscillazione del campo elettrico. Può essere verticale, orizzontale o circolare.</p>
+      </article>
+    </div>
+    <div class="example">
+      <strong>Esempio numerico.</strong> Un Wi-Fi a 2,4 GHz ha λ = 3·10<sup>8</sup> / 2,4·10<sup>9</sup> = <strong>0,125 m</strong>, cioè circa 12,5 cm. Un segnale audio a 1 kHz ha invece λ = 300 km: il motivo per cui il messaggio audio va "trasportato" da una portante ad alta frequenza.
+    </div>
+    <h3>La matematica dell'onda</h3>
+    <p>Un segnale armonico si descrive con seno o coseno. Tre grandezze lo caratterizzano:</p>
+    <div class="formula"><span class="label">Forma generale</span>v(t) = V<sub>M</sub> · sen(ω t + φ)</div>
+    <div class="grid">
+      <article class="card">
+        <h4>Frequenza f</h4>
+        <p>Numero di cicli al secondo, in hertz (Hz). Relazione con il periodo: T = 1 / f.</p>
+        <p><em>Es.</em> f = 50 Hz → T = 20 ms.</p>
+      </article>
+      <article class="card">
+        <h4>Pulsazione ω</h4>
+        <p>Velocità angolare, in rad/s: ω = 2π f.</p>
+      </article>
+      <article class="card">
+        <h4>Fase iniziale φ</h4>
+        <p>Il punto di partenza sulla sinusoide, in radianti o gradi. Due segnali con la stessa frequenza ma fase diversa sono "sfasati".</p>
+      </article>
+    </div>
+    <div class="quiz">
+      <p class="quiz-title">Mettiti alla prova</p>
+      <details>
+        <summary>Un segnale a 900 MHz (telefonia mobile): quanto vale la lunghezza d'onda?</summary>
+        <p>λ = c / f = 3·10<sup>8</sup> / 9·10<sup>8</sup> ≈ <strong>0,33 m</strong>. Una antenna a λ/2 misura circa 16,7 cm.</p>
+      </details>
+      <details>
+        <summary>Perché un'onda elettromagnetica è detta "trasversale"?</summary>
+        <p>Perché E e B oscillano <em>perpendicolarmente</em> alla direzione in cui l'energia si propaga, non lungo di essa.</p>
+      </details>
+    </div>
+  </div>
+</section>
+<!-- ================= 2. LINEE ================= -->
+<section class="topic" id="linee" aria-labelledby="linee-title">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-kicker">Sezione 2</p>
+      <h2 id="linee-title">Linee di trasmissione</h2>
+      <p>Una linea guida l'energia da una sorgente a un carico, confinandola tra due conduttori. Il punto critico è che la linea non è un semplice filo: si comporta come un circuito con impedenza propria.</p>
+    </div>
+    <figure>
+      <svg viewBox="0 0 600 130" role="img" aria-labelledby="fig-linea-t">
+        <title id="fig-linea-t">Schema a blocchi: sorgente, linea di trasmissione e carico</title>
+        <defs>
+          <marker id="arrow2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" class="svg-muted" fill="currentColor"/>
+          </marker>
+        </defs>
+        <rect class="svg-box" x="15" y="35" width="150" height="60" rx="10"/>
+        <text class="svg-text" x="90" y="62" text-anchor="middle">Sorgente</text>
+        <text class="svg-text svg-muted" x="90" y="82" text-anchor="middle">generatore di segnale</text>
+        <line class="svg-line" x1="165" y1="65" x2="435" y2="65" style="stroke-width:6"/>
+        <text class="svg-text" x="300" y="55" text-anchor="middle">Mezzo: conduttori paralleli</text>
+        <line class="svg-arrow" x1="170" y1="100" x2="428" y2="100" marker-end="url(#arrow2)"/>
+        <text class="svg-text svg-muted" x="300" y="120" text-anchor="middle">energia guidata</text>
+        <rect class="svg-box-accent" x="435" y="35" width="150" height="60" rx="10"/>
+        <text class="svg-text" x="510" y="62" text-anchor="middle">Carico</text>
+        <text class="svg-text svg-muted" x="510" y="82" text-anchor="middle">utilizzatore finale</text>
+      </svg>
+      <figcaption>Trasporto guidato: confinamento controllato dell'energia tra due conduttori.</figcaption>
+    </figure>
+    <h3>Tipologie di linea</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Geometria</th><th>Struttura</th><th>Caratteristiche e impiego</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Coassiale</strong> <span class="svg-muted">(modulo 5.1.1)</span></td>
+            <td>Conduttore interno, dielettrico, schermo esterno concentrico</td>
+            <td>Alta immunità alle interferenze esterne, perché lo schermo confina il campo. Antenne TV, cavi RF, strumentazione.</td>
+          </tr>
+          <tr>
+            <td><strong>Bifilare</strong></td>
+            <td>Due fili paralleli a distanza costante</td>
+            <td>Impiego prevalente a basse frequenze. La "piattina" 300 Ω per antenne TV è un esempio tipico.</td>
+          </tr>
+          <tr>
+            <td><strong>Microstriscia</strong></td>
+            <td>Pista conduttiva su un lato di un supporto, piano di massa sull'altro</td>
+            <td>Integrazione diretta su circuiti stampati (PCB) a radiofrequenza: reti Wi-Fi, schede radio.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Impedenza caratteristica Z<sub>0</sub></h3>
+    <p>Su una linea percorsa da un'onda progressiva, il rapporto tra tensione e corrente è costante. Questo rapporto è l'impedenza caratteristica, e dipende <strong>solo dalla geometria</strong> e dai materiali, non dalla lunghezza del cavo.</p>
+    <div class="formula"><span class="label">Linea ideale (R = 0, G = 0)</span>Z<sub>0</sub> = √(L / C)</div>
+    <div class="formula"><span class="label">Cavo coassiale (aria o dielettrico εr)</span>Z<sub>0</sub> = (138 / √ε<sub>r</sub>) · log<sub>10</sub>(D / d)</div>
+    <div class="note">
+      <strong>Attenzione:</strong> Z<sub>0</sub> <em>non</em> è una resistenza misurabile con un tester. È il rapporto tra onde progressive di tensione e corrente. I valori standard sono 50 Ω per le applicazioni RF e 75 Ω per la TV.
+    </div>
+    <div class="example">
+      <strong>Esempio.</strong> Per un coassiale in aria con rapporto D/d = 3,5: log<sub>10</sub>(3,5) ≈ 0,544, quindi Z<sub>0</sub> ≈ 138 · 0,544 ≈ <strong>75 Ω</strong>.
+    </div>
+    <h3>Regime stazionario: onda diretta e riflessa</h3>
+    <p>Quando il carico non coincide con Z<sub>0</sub>, parte dell'energia torna indietro. Sulla linea si sovrappongono un'onda diretta V<sup>+</sup> (verso il carico) e una riflessa V<sup>−</sup> (verso il generatore).</p>
+    <div class="formula"><span class="label">Coefficiente di riflessione</span>Γ = V<sup>−</sup> / V<sup>+</sup> = (Z<sub>L</sub> − Z<sub>0</sub>) / (Z<sub>L</sub> + Z<sub>0</sub>)</div>
+    <div class="formula"><span class="label">Rapporto d'onda stazionaria (ROS, in inglese VSWR)</span>ROS = (1 + |Γ|) / (1 − |Γ|)</div>
+    <p>Il ROS vale <strong>1</strong> in caso di adattamento perfetto e cresce all'infinito con la riflessione totale (circuito aperto o in corto).</p>
+    <div class="calc" id="calc-ros" aria-labelledby="calc-ros-title">
+      <h3 id="calc-ros-title">🔧 Calcolatore di adattamento</h3>
+      <div class="calc-form">
+        <div>
+          <label for="zl">Impedenza di carico Z<sub>L</sub> (Ω)</label>
+          <input type="number" id="zl" value="100" min="0.1" step="any">
+        </div>
+        <div>
+          <label for="z0">Impedenza della linea Z<sub>0</sub> (Ω)</label>
+          <input type="number" id="z0" value="50" min="0.1" step="any">
+        </div>
+      </div>
+      <div class="calc-results" aria-live="polite">
+        <div><output id="out-gamma">—</output><span>|Γ| coefficiente di riflessione</span></div>
+        <div><output id="out-ros">—</output><span>ROS</span></div>
+        <div><output id="out-pref">—</output><span>% potenza riflessa</span></div>
+        <div><output id="out-zt">—</output><span>Z<sub>T</sub> trasformatore λ/4 (Ω)</span></div>
+      </div>
+      <p class="hint">Prova con Z<sub>L</sub> = 50 Ω (adattamento perfetto) e con Z<sub>L</sub> = 100 Ω (come nell'esempio di sotto). Z<sub>T</sub> = √(Z<sub>0</sub> · Z<sub>L</sub>) vale per carichi resistivi puri.</p>
+    </div>
+    <div class="example">
+      <strong>Esempio.</strong> Z<sub>L</sub> = 100 Ω su una linea da 50 Ω: Γ = (100 − 50) / (100 + 50) = 1/3, quindi ROS = (4/3) / (2/3) = <strong>2</strong>. La potenza riflessa è |Γ|² = 1/9 ≈ <strong>11 %</strong>.
+    </div>
+    <h3>Adattamento di impedenza</h3>
+    <div class="grid">
+      <article class="card ok">
+        <span class="tag">Obiettivo</span>
+        <h4>Z<sub>L</sub> = Z<sub>0</sub></h4>
+        <p>L'impedenza del carico deve eguagliare quella della linea.</p>
+      </article>
+      <article class="card ok">
+        <span class="tag">Risultato</span>
+        <h4>Zero potenza riflessa</h4>
+        <p>Al generatore non torna alcuna energia: Γ = 0 e ROS = 1.</p>
+      </article>
+      <article class="card ok">
+        <span class="tag">Strumento</span>
+        <h4>Trasformatore a λ/4</h4>
+        <p>Un tratto di linea lungo un quarto d'onda, con Z<sub>T</sub> = √(Z<sub>0</sub> · Z<sub>L</sub>), realizza l'adattamento.</p>
+      </article>
+    </div>
+    <h3>Qualità della trasmissione</h3>
+    <p>Un canale è <strong>non distorcente</strong> quando l'uscita è una copia esatta dell'ingresso, amplificata di un fattore G e ritardata di τ<sub>r</sub>:</p>
+    <div class="formula"><span class="label">Condizione di non distorsione</span>s<sub>u</sub>(t) = G · s<sub>i</sub>(t − τ<sub>r</sub>)</div>
+    <p>Nel dominio della frequenza, la funzione di risposta H(f) del canale deve soddisfare tre requisiti:</p>
+    <ul class="clean">
+      <li><strong>Modulo costante:</strong> |H(f)| = G in tutta la banda del segnale.</li>
+      <li><strong>Fase lineare:</strong> φ(f) = −2π f τ<sub>r</sub>, cioè proporzionale alla frequenza.</li>
+      <li><strong>Ritardo di gruppo costante:</strong> τ<sub>g</sub>(f) = −(1/2π)·dφ/df uguale per tutte le componenti spettrali.</li>
+    </ul>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Tipo di distorsione</th><th>Cosa succede</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Di ampiezza</strong></td><td>|H(f)| non è costante: componenti a frequenze diverse subiscono guadagni diversi.</td></tr>
+          <tr><td><strong>Di fase / ritardo</strong></td><td>La fase non è lineare: frequenze diverse arrivano sfasate, e il segnale si "impasta".</td></tr>
+          <tr><td><strong>Non lineare</strong></td><td>Amplificatori in saturazione generano armoniche che non erano nel segnale d'ingresso.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="quiz">
+      <p class="quiz-title">Mettiti alla prova</p>
+      <details>
+        <summary>Perché l'impedenza caratteristica non dipende dalla lunghezza del cavo?</summary>
+        <p>Perché è un rapporto tra onde progressive di tensione e corrente, che dipende da L e C per unità di lunghezza. Sono proprietà locali della linea, non del cavo intero.</p>
+      </details>
+      <details>
+        <summary>Un ROS di 1,5 come si interpreta?</summary>
+        <p>|Γ| = (ROS − 1) / (ROS + 1) = 0,5/2,5 = 0,2. La potenza riflessa è 0,04, cioè il 4 %: un disadattamento leggero ma non trascurabile.</p>
+      </details>
+      <details>
+        <summary>Se la fase di un canale è lineare ma l'ampiezza non è costante, il segnale è distorto?</summary>
+        <p>Sì. La condizione di non distorsione richiede <em>entrambe</em> le condizioni (modulo costante e fase lineare). Basta che una non sia rispettata perché il segnale cambi forma.</p>
+      </details>
+    </div>
+  </div>
+</section>
+<!-- ================= 3. ANTENNE ================= -->
+<section class="topic" id="antenne" aria-labelledby="antenne-title">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-kicker">Sezione 3</p>
+      <h2 id="antenne-title">Antenne</h2>
+      <p>L'antenna è il trasduttore che fa il "salto": trasforma un'onda guidata dalla linea in un'onda che si propaga nello spazio libero. Il principio è reversibile: la stessa antenna trasmette e riceve.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="tag">Trasduzione</span>
+        <h4>Dalla linea allo spazio</h4>
+        <p>Transizione da onda guidata a onda libera.</p>
+      </article>
+      <article class="card">
+        <span class="tag">Reversibilità</span>
+        <h4>Stesso comportamento in TX e RX</h4>
+        <p>Le proprietà che valgono in trasmissione valgono anche in ricezione.</p>
+      </article>
+      <article class="card">
+        <span class="tag">Risonanza</span>
+        <h4>Efficienza massima a frequenze precise</h4>
+        <p>L'antenna lavora meglio quando le sue dimensioni sono legate alla lunghezza d'onda (tipicamente λ/2 o λ/4).</p>
+      </article>
+    </div>
+    <h3>Modelli storici e antenne quotidiane</h3>
+    <div class="grid">
+      <article class="card">
+        <span class="tag">Modello teorico</span>
+        <h4>Dipolo hertziano</h4>
+        <p>Elemento infinitesimo, usato come riferimento teorico per calcolare il campo irradiato. Il diagramma è un "otto" con zero sull'asse del dipolo.</p>
+      </article>
+      <article class="card">
+        <span class="tag">Dipolo reale</span>
+        <h4>Dipolo a mezz'onda (λ/2)</h4>
+        <p>La versione pratica, lunga λ/2, con resistenza di radiazione di circa 73 Ω e guadagno di 2,15 dBi.</p>
+      </article>
+      <article class="card">
+        <span class="tag">Marconiana</span>
+        <h4>Quarto d'onda con specchio di terra</h4>
+        <p>Un monopolo λ/4 sopra un piano di massa: il piano "riflette" la metà inferiore del dipolo, con impedenza di circa 36 Ω.</p>
+      </article>
+    </div>
+    <div class="grid" style="margin-top:1.2rem">
+      <article class="card">
+        <span class="tag">Radiomobile</span>
+        <h4>Pannelli settoriali</h4>
+        <p>Coprono un settore angolare preciso della cella urbana.</p>
+      </article>
+      <article class="card">
+        <span class="tag">Televisione</span>
+        <h4>Array Yagi-Uda</h4>
+        <p>Elementi parassiti (riflettore e direttori) rendono l'antenna molto direttiva.</p>
+      </article>
+      <article class="card">
+        <span class="tag">Satellite</span>
+        <h4>Riflettori parabolici</h4>
+        <p>Concentrano il fascio su un punto preciso del cielo.</p>
+      </article>
+    </div>
+    <h3>Polarizzazione</h3>
+    <p>La polarizzazione è il piano in cui oscilla il campo elettrico E. Per massimizzare la cattura dell'energia, trasmettitore e ricevitore devono condividere lo <strong>stesso piano</strong>. Con piani ortogonali (verticale contro orizzontale) il segnale ricevuto, in teoria, si annulla: è la perdita da disadattamento di polarizzazione.</p>
+    <h3>Antenna isotropica: il riferimento</h3>
+    <p>L'antenna isotropica è una sorgente puntiforme ideale che irradia in modo uniforme in tutte le direzioni. Non esiste nella pratica, ma è il metro universale per confrontare le antenne reali. Il suo guadagno è <strong>0 dBi</strong>.</p>
+    <div class="formula"><span class="label">Conversione tra guadagno lineare e decibel</span>G<sub>dBi</sub> = 10 · log<sub>10</sub>(G)  ·  G = 10<sup>G<sub>dBi</sub>/10</sup></div>
+    <p>Esempio: un guadagno lineare G = 100 corrisponde a 20 dBi. Il dipolo a mezz'onda vale 2,15 dBi (≈ 0 dBd).</p>
+    <h3>Diagramma di irradiazione</h3>
+    <p>Il diagramma mostra come la potenza si distribuisce nelle direzioni dello spazio. Si individuano tre elementi:</p>
+    <div class="grid">
+      <article class="card"><h4>Lobo principale</h4><p>La direzione di massima energia irradiata.</p></article>
+      <article class="card"><h4>Lobi secondari</h4><p>Dispersioni laterali indesiderate, che sprecano potenza.</p></article>
+      <article class="card"><h4>Rapporto A/I</h4><p>Rapporto tra il lobo principale e il lobo posteriore: misura quanto l'antenna "ignora" i segnali alle spalle.</p></article>
+    </div>
+    <figure>
+      <svg viewBox="0 0 600 240" role="img" aria-labelledby="fig-diag-t">
+        <title id="fig-diag-t">Confronto tra il diagramma del dipolo elementare, a forma di otto, e quello di un'antenna direttiva con lobo principale a destra</title>
+        <!-- dipolo -->
+        <circle cx="150" cy="110" r="95" class="svg-axis" fill="none"/>
+        <path class="svg-lobe" d="M150.0,110.0 L151.7,110.0 L153.3,109.9 L155.0,109.7 L156.6,109.5 L158.2,109.3 L159.9,109.0 L161.5,108.6 L163.1,108.2 L164.7,107.7 L166.2,107.1 L167.8,106.5 L169.3,105.9 L170.8,105.2 L172.3,104.4 L173.8,103.6 L175.2,102.8 L176.6,101.9 L177.9,100.9 L179.2,99.9 L180.5,98.9 L181.8,97.8 L183.0,96.7 L184.2,95.5 L185.3,94.3 L186.4,93.0 L187.4,91.7 L188.4,90.4 L189.4,89.1 L190.3,87.7 L191.1,86.2 L191.9,84.8 L192.7,83.3 L193.4,81.8 L194.0,80.3 L194.6,78.7 L195.2,77.2 L195.7,75.6 L196.1,74.0 L196.5,72.4 L196.8,70.7 L197.0,69.1 L197.2,67.5 L197.4,65.8 L197.5,64.2 L197.5,62.5 L197.5,60.8 L197.4,59.2 L197.2,57.5 L197.0,55.9 L196.8,54.3 L196.5,52.6 L196.1,51.0 L195.7,49.4 L195.2,47.8 L194.6,46.3 L194.0,44.7 L193.4,43.2 L192.7,41.7 L191.9,40.2 L191.1,38.8 L190.3,37.3 L189.4,35.9 L188.4,34.6 L187.4,33.3 L186.4,32.0 L185.3,30.7 L184.2,29.5 L183.0,28.3 L181.8,27.2 L180.5,26.1 L179.2,25.1 L177.9,24.1 L176.6,23.1 L175.2,22.2 L173.8,21.4 L172.3,20.6 L170.8,19.8 L169.3,19.1 L167.8,18.5 L166.2,17.9 L164.7,17.3 L163.1,16.8 L161.5,16.4 L159.9,16.0 L158.2,15.7 L156.6,15.5 L155.0,15.3 L153.3,15.1 L151.7,15.0 L150.0,15.0 L148.3,15.0 L146.7,15.1 L145.0,15.3 L143.4,15.5 L141.8,15.7 L140.1,16.0 L138.5,16.4 L136.9,16.8 L135.3,17.3 L133.8,17.9 L132.2,18.5 L130.7,19.1 L129.2,19.8 L127.7,20.6 L126.2,21.4 L124.8,22.2 L123.4,23.1 L122.1,24.1 L120.8,25.1 L119.5,26.1 L118.2,27.2 L117.0,28.3 L115.8,29.5 L114.7,30.7 L113.6,32.0 L112.6,33.3 L111.6,34.6 L110.6,35.9 L109.7,37.3 L108.9,38.7 L108.1,40.2 L107.3,41.7 L106.6,43.2 L106.0,44.7 L105.4,46.3 L104.8,47.8 L104.3,49.4 L103.9,51.0 L103.5,52.6 L103.2,54.3 L103.0,55.9 L102.8,57.5 L102.6,59.2 L102.5,60.8 L102.5,62.5 L102.5,64.2 L102.6,65.8 L102.8,67.5 L103.0,69.1 L103.2,70.7 L103.5,72.4 L103.9,74.0 L104.3,75.6 L104.8,77.2 L105.4,78.7 L106.0,80.3 L106.6,81.8 L107.3,83.3 L108.1,84.8 L108.9,86.2 L109.7,87.7 L110.6,89.1 L111.6,90.4 L112.6,91.7 L113.6,93.0 L114.7,94.3 L115.8,95.5 L117.0,96.7 L118.2,97.8 L119.5,98.9 L120.8,99.9 L122.1,100.9 L123.4,101.9 L124.8,102.8 L126.2,103.6 L127.7,104.4 L129.2,105.2 L130.7,105.9 L132.2,106.5 L133.8,107.1 L135.3,107.7 L136.9,108.2 L138.5,108.6 L140.1,109.0 L141.8,109.3 L143.4,109.5 L145.0,109.7 L146.7,109.9 L148.3,110.0 L150.0,110.0 L148.3,110.0 L146.7,110.1 L145.0,110.3 L143.4,110.5 L141.8,110.7 L140.1,111.0 L138.5,111.4 L136.9,111.8 L135.3,112.3 L133.8,112.9 L132.2,113.5 L130.7,114.1 L129.2,114.8 L127.7,115.6 L126.2,116.4 L124.8,117.2 L123.4,118.1 L122.1,119.1 L120.8,120.1 L119.5,121.1 L118.2,122.2 L117.0,123.3 L115.8,124.5 L114.7,125.7 L113.6,127.0 L112.6,128.3 L111.6,129.6 L110.6,130.9 L109.7,132.3 L108.9,133.8 L108.1,135.2 L107.3,136.7 L106.6,138.2 L106.0,139.7 L105.4,141.3 L104.8,142.8 L104.3,144.4 L103.9,146.0 L103.5,147.6 L103.2,149.3 L103.0,150.9 L102.8,152.5 L102.6,154.2 L102.5,155.8 L102.5,157.5 L102.5,159.2 L102.6,160.8 L102.8,162.5 L103.0,164.1 L103.2,165.7 L103.5,167.4 L103.9,169.0 L104.3,170.6 L104.8,172.2 L105.4,173.7 L106.0,175.3 L106.6,176.8 L107.3,178.3 L108.1,179.8 L108.9,181.2 L109.7,182.7 L110.6,184.1 L111.6,185.4 L112.6,186.7 L113.6,188.0 L114.7,189.3 L115.8,190.5 L117.0,191.7 L118.2,192.8 L119.5,193.9 L120.8,194.9 L122.1,195.9 L123.4,196.9 L124.8,197.8 L126.3,198.6 L127.7,199.4 L129.2,200.2 L130.7,200.9 L132.2,201.5 L133.8,202.1 L135.3,202.7 L136.9,203.2 L138.5,203.6 L140.1,204.0 L141.8,204.3 L143.4,204.5 L145.0,204.7 L146.7,204.9 L148.3,205.0 L150.0,205.0 L151.7,205.0 L153.3,204.9 L155.0,204.7 L156.6,204.5 L158.2,204.3 L159.9,204.0 L161.5,203.6 L163.1,203.2 L164.7,202.7 L166.2,202.1 L167.8,201.5 L169.3,200.9 L170.8,200.2 L172.3,199.4 L173.7,198.6 L175.2,197.8 L176.6,196.9 L177.9,195.9 L179.2,194.9 L180.5,193.9 L181.8,192.8 L183.0,191.7 L184.2,190.5 L185.3,189.3 L186.4,188.0 L187.4,186.7 L188.4,185.4 L189.4,184.1 L190.3,182.7 L191.1,181.2 L191.9,179.8 L192.7,178.3 L193.4,176.8 L194.0,175.3 L194.6,173.7 L195.2,172.2 L195.7,170.6 L196.1,169.0 L196.5,167.4 L196.8,165.7 L197.0,164.1 L197.2,162.5 L197.4,160.8 L197.5,159.2 L197.5,157.5 L197.5,155.8 L197.4,154.2 L197.2,152.5 L197.0,150.9 L196.8,149.3 L196.5,147.6 L196.1,146.0 L195.7,144.4 L195.2,142.8 L194.6,141.3 L194.0,139.7 L193.4,138.2 L192.7,136.7 L191.9,135.2 L191.1,133.8 L190.3,132.3 L189.4,130.9 L188.4,129.6 L187.4,128.3 L186.4,127.0 L185.3,125.7 L184.2,124.5 L183.0,123.3 L181.8,122.2 L180.5,121.1 L179.2,120.1 L177.9,119.1 L176.6,118.1 L175.2,117.2 L173.8,116.4 L172.3,115.6 L170.8,114.8 L169.3,114.1 L167.8,113.5 L166.2,112.9 L164.7,112.3 L163.1,111.8 L161.5,111.4 L159.9,111.0 L158.2,110.7 L156.6,110.5 L155.0,110.3 L153.3,110.1 L151.7,110.0 L150.0,110.0 Z"/>
+        <text class="svg-text" x="150" y="228" text-anchor="middle">Dipolo elementare (diagramma a otto)</text>
+        <!-- direttiva -->
+        <circle cx="450" cy="110" r="95" class="svg-axis" fill="none"/>
+        <path class="svg-lobe" d="M538.4,110.0 L538.3,108.5 L538.1,106.9 L537.8,105.4 L537.3,103.9 L536.7,102.4 L536.0,101.0 L535.2,99.5 L534.3,98.2 L533.2,96.8 L532.0,95.5 L530.8,94.3 L529.4,93.1 L527.9,92.0 L526.4,91.0 L524.7,90.0 L523.0,89.1 L521.2,88.2 L519.4,87.4 L517.5,86.8 L515.6,86.1 L513.6,85.6 L511.6,85.1 L509.5,84.7 L507.5,84.4 L505.4,84.2 L503.3,84.0 L501.3,83.9 L499.2,83.8 L497.2,83.9 L495.2,83.9 L493.2,84.1 L491.2,84.2 L489.3,84.5 L487.4,84.7 L485.6,85.0 L483.9,85.4 L482.2,85.7 L480.6,86.1 L479.1,86.4 L477.7,86.8 L476.3,87.1 L475.0,87.5 L473.9,87.8 L472.8,88.0 L471.8,88.2 L470.9,88.4 L470.1,88.5 L469.4,88.5 L468.7,88.4 L468.2,88.3 L467.7,88.1 L467.3,87.8 L467.0,87.5 L466.7,87.0 L466.5,86.5 L466.2,85.9 L466.0,85.3 L465.9,84.6 L465.7,83.9 L465.5,83.2 L465.3,82.5 L465.0,81.8 L464.7,81.1 L464.4,80.5 L464.0,80.0 L463.5,79.6 L463.0,79.3 L462.5,79.0 L461.9,79.0 L461.3,79.0 L460.6,79.2 L459.9,79.6 L459.2,80.0 L458.4,80.7 L457.7,81.4 L456.9,82.3 L456.2,83.3 L455.4,84.4 L454.8,85.5 L454.1,86.8 L453.5,88.0 L452.9,89.4 L452.4,90.7 L451.9,92.0 L451.5,93.3 L451.1,94.5 L450.7,95.8 L450.5,96.9 L450.2,98.0 L450.0,99.1 L449.8,100.0 L449.7,100.9 L449.6,101.7 L449.5,102.5 L449.4,103.2 L449.3,103.7 L449.3,104.3 L449.3,104.7 L449.2,105.1 L449.2,105.5 L449.2,105.8 L449.2,106.1 L449.1,106.3 L449.1,106.5 L449.1,106.6 L449.1,106.8 L449.0,106.9 L449.0,107.0 L449.0,107.1 L449.0,107.1 L448.9,107.2 L448.9,107.2 L448.8,107.3 L448.8,107.3 L448.8,107.4 L448.7,107.4 L448.7,107.4 L448.6,107.4 L448.6,107.5 L448.6,107.5 L448.5,107.5 L448.5,107.5 L448.4,107.6 L448.4,107.6 L448.3,107.6 L448.3,107.6 L448.2,107.6 L448.2,107.7 L448.1,107.7 L448.1,107.7 L448.0,107.7 L447.9,107.7 L447.9,107.7 L447.8,107.7 L447.7,107.7 L447.6,107.7 L447.6,107.7 L447.5,107.7 L447.4,107.7 L447.3,107.7 L447.1,107.7 L447.0,107.7 L446.9,107.6 L446.7,107.6 L446.6,107.6 L446.4,107.6 L446.2,107.5 L446.0,107.5 L445.8,107.5 L445.6,107.4 L445.3,107.4 L445.1,107.4 L444.8,107.4 L444.5,107.3 L444.2,107.3 L443.9,107.3 L443.6,107.3 L443.3,107.3 L443.0,107.3 L442.6,107.3 L442.3,107.3 L441.9,107.4 L441.6,107.4 L441.2,107.5 L440.8,107.5 L440.5,107.6 L440.2,107.7 L439.8,107.8 L439.5,108.0 L439.2,108.1 L438.9,108.2 L438.7,108.4 L438.5,108.6 L438.2,108.8 L438.1,109.0 L437.9,109.2 L437.8,109.4 L437.7,109.6 L437.7,109.8 L437.6,110.0 L437.7,110.2 L437.7,110.4 L437.8,110.6 L437.9,110.8 L438.1,111.0 L438.2,111.2 L438.5,111.4 L438.7,111.6 L438.9,111.8 L439.2,111.9 L439.5,112.0 L439.8,112.2 L440.2,112.3 L440.5,112.4 L440.8,112.5 L441.2,112.5 L441.6,112.6 L441.9,112.6 L442.3,112.7 L442.6,112.7 L443.0,112.7 L443.3,112.7 L443.6,112.7 L443.9,112.7 L444.2,112.7 L444.5,112.7 L444.8,112.6 L445.1,112.6 L445.3,112.6 L445.6,112.6 L445.8,112.5 L446.0,112.5 L446.2,112.5 L446.4,112.4 L446.6,112.4 L446.7,112.4 L446.9,112.4 L447.0,112.3 L447.1,112.3 L447.3,112.3 L447.4,112.3 L447.5,112.3 L447.6,112.3 L447.6,112.3 L447.7,112.3 L447.8,112.3 L447.9,112.3 L447.9,112.3 L448.0,112.3 L448.1,112.3 L448.1,112.3 L448.2,112.3 L448.2,112.4 L448.3,112.4 L448.3,112.4 L448.4,112.4 L448.4,112.4 L448.5,112.5 L448.5,112.5 L448.6,112.5 L448.6,112.5 L448.7,112.5 L448.7,112.6 L448.7,112.6 L448.8,112.6 L448.8,112.6 L448.9,112.6 L448.9,112.7 L449.0,112.7 L449.0,112.7 L449.1,112.7 L449.1,112.7 L449.2,112.7 L449.2,112.8 L449.3,112.8 L449.3,112.8 L449.3,112.8 L449.4,112.8 L449.4,112.9 L449.5,112.9 L449.5,112.9 L449.6,112.9 L449.6,112.9 L449.7,113.0 L449.7,113.0 L449.8,113.0 L449.8,113.1 L449.9,113.1 L449.9,113.1 L450.0,113.2 L450.1,113.2 L450.1,113.3 L450.2,113.3 L450.2,113.4 L450.3,113.5 L450.4,113.6 L450.4,113.7 L450.5,113.8 L450.6,113.9 L450.7,114.0 L450.8,114.1 L450.9,114.3 L451.0,114.4 L451.1,114.6 L451.3,114.8 L451.4,115.0 L451.6,115.2 L451.8,115.4 L452.0,115.7 L452.2,116.0 L452.4,116.3 L452.7,116.6 L452.9,116.9 L453.2,117.3 L453.6,117.7 L453.9,118.1 L454.3,118.5 L454.7,118.9 L455.2,119.4 L455.7,119.9 L456.2,120.4 L456.8,120.9 L457.4,121.5 L458.1,122.0 L458.8,122.6 L459.6,123.2 L460.4,123.8 L461.3,124.5 L462.2,125.1 L463.2,125.8 L464.3,126.4 L465.4,127.1 L466.5,127.7 L467.8,128.4 L469.0,129.0 L470.4,129.7 L471.8,130.3 L473.3,131.0 L474.8,131.6 L476.4,132.1 L478.0,132.7 L479.7,133.2 L481.5,133.7 L483.3,134.2 L485.1,134.6 L487.0,135.0 L489.0,135.3 L491.0,135.6 L493.0,135.8 L495.0,136.0 L497.0,136.1 L499.1,136.1 L501.2,136.1 L503.3,136.0 L505.4,135.8 L507.5,135.6 L509.5,135.3 L511.6,134.9 L513.6,134.4 L515.6,133.9 L517.5,133.2 L519.4,132.6 L521.2,131.8 L523.0,130.9 L524.7,130.0 L526.4,129.0 L527.9,128.0 L529.4,126.9 L530.8,125.7 L532.0,124.5 L533.2,123.2 L534.2,121.8 L535.2,120.5 L536.0,119.0 L536.7,117.6 L537.3,116.1 L537.8,114.6 L538.1,113.1 L538.3,111.5 L538.4,110.0 Z"/>
+        <text class="svg-text" x="450" y="228" text-anchor="middle">Antenna direttiva (tipo Yagi)</text>
+        <text class="svg-text svg-muted" x="552" y="104">0°</text>
+        <text class="svg-text svg-muted" x="400" y="60">lobo</text>
+        <text class="svg-text svg-muted" x="400" y="72">laterale</text>
+      </svg>
+      <figcaption>Schemi indicativi, non in scala. Il lobo principale della Yagi punta a 0°: in quella direzione la potenza è concentrata.</figcaption>
+    </figure>
+    <h3>Angolo di apertura (−3 dB)</h3>
+    <p>La larghezza del fascio si misura tra i due punti in cui la potenza scende a <strong>metà</strong> del massimo (−3 dB). Il fascio è più stretto e più selettivo quanto più l'antenna è direttiva. Attenzione: a −3 dB la <em>potenza</em> è al 50 %, mentre il <em>campo elettrico</em> è al 70,7 % (1/√2).</p>
+    <h3>Efficienza radiante, guadagno ed EIRP</h3>
+    <div class="grid">
+      <article class="card">
+        <span class="tag">Rendimento</span>
+        <h4>η = P<sub>rad</sub> / P<sub>in</sub></h4>
+        <p>Rapporto tra la potenza effettivamente irradiata e quella accettata dall'antenna. Le perdite ohmiche (resistenza R<sub>perdite</sub>) la riducono.</p>
+        <div class="formula"><span class="label">Rendimento in termini di resistenze</span>η = R<sub>r</sub> / (R<sub>r</sub> + R<sub>perdite</sub>)</div>
+      </article>
+      <article class="card">
+        <span class="tag">Guadagno</span>
+        <h4>G = η · D</h4>
+        <p>La direttività D dice quanto il fascio è concentrato. Il guadagno G è la direttività corretta per le perdite dissipative.</p>
+      </article>
+      <article class="card accent">
+        <span class="tag">E.I.R.P.</span>
+        <h4>Potenza apparente massima</h4>
+        <p>Equivalent Isotropically Radiated Power: la potenza che un'antenna isotropica dovrebbe emettere per eguagliare il segnale nella direzione di massimo guadagno.</p>
+        <div class="formula"><span class="label">In decibel</span>EIRP<sub>dBW</sub> = P<sub>t,dBW</sub> + G<sub>dBi</sub> − L<sub>cavo,dB</sub></div>
+      </article>
+    </div>
+    <div class="example">
+      <strong>Esempio.</strong> Una antenna con direttività D = 10 dBi e rendimento η = 0,8 (perdite di circa 1 dB) ha G = 10 − 0,97 ≈ <strong>9 dBi</strong>. Con un trasmettitore da 10 W (10 dBW) e questa antenna, senza perdite di cavo, l'EIRP vale circa 10 + 9 = <strong>19 dBW</strong>.
+    </div>
+    <div class="calc" id="calc-eirp" aria-labelledby="calc-eirp-title">
+      <h3 id="calc-eirp-title">🔧 Calcolatore EIRP</h3>
+      <div class="calc-form">
+        <div>
+          <label for="pt">Potenza in uscita P<sub>t</sub> (W)</label>
+          <input type="number" id="pt" value="10" min="0.001" step="any">
+        </div>
+        <div>
+          <label for="gi">Guadagno antenna G (dBi)</label>
+          <input type="number" id="gi" value="15" step="0.1">
+        </div>
+        <div>
+          <label for="lc">Perdite del cavo L (dB)</label>
+          <input type="number" id="lc" value="2" min="0" step="0.1">
+        </div>
+      </div>
+      <div class="calc-results" aria-live="polite">
+        <div><output id="out-eirp-dbw">—</output><span>EIRP (dBW)</span></div>
+        <div><output id="out-eirp-dbm">—</output><span>EIRP (dBm)</span></div>
+        <div><output id="out-eirp-w">—</output><span>EIRP (W)</span></div>
+      </div>
+      <p class="hint">Formula: EIRP (dBW) = 10·log₁₀(P<sub>t</sub>) + G − L; dBm = dBW + 30. Il valore dipende dalla direzione di massimo guadagno.</p>
+    </div>
+    <div class="quiz">
+      <p class="quiz-title">Mettiti alla prova</p>
+      <details>
+        <summary>Un'antenna ha G = 3 dBi. Quanto vale il guadagno lineare?</summary>
+        <p>G = 10<sup>3/10</sup> ≈ <strong>2</strong>. Quindi è il doppio di un'isotropica in direzione di massimo guadagno.</p>
+      </details>
+      <details>
+        <summary>Perché un ricevitore collegato a un'antenna Yagi ascolta meglio segnali da una sola direzione?</summary>
+        <p>Perché il lobo principale è stretto e rivolto verso il trasmettitore: il guadagno è elevato in quella direzione e basso ai lati e alle spalle (buon rapporto A/I).</p>
+      </details>
+      <details>
+        <summary>Un'antenna perfettamente efficiente (η = 1) ha G uguale a D?</summary>
+        <p>Sì: G = η · D = D. Nella realtà η &lt; 1, quindi G &lt; D.</p>
+      </details>
+    </div>
+  </div>
+</section>
+<!-- ================= 4. MODULAZIONI ================= -->
+<section class="topic" id="modulazioni" aria-labelledby="modulazioni-title">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-kicker">Sezione 4</p>
+      <h2 id="modulazioni-title">Modulazioni AM e FM</h2>
+      <p>Un segnale audio ha frequenze fra 20 Hz e 20 kHz. Un'antenna efficiente deve essere lunga almeno λ/4: a 1 kHz servirebbero circa 75 km. Per questo il messaggio viene "imbarcato" su una portante ad alta frequenza, cioè modulato.</p>
+    </div>
+    <figure>
+      <svg viewBox="0 0 600 420" role="img" aria-labelledby="fig-mod-t">
+        <title id="fig-mod-t">Tre forme d'onda: il messaggio a bassa frequenza, il segnale AM con inviluppo che segue il messaggio, il segnale FM con frequenza che varia</title>
+        <!-- messaggio -->
+        <text class="svg-text" x="10" y="14">Messaggio x(t)</text>
+        <g transform="translate(0,60)">
+          <line class="svg-axis" x1="0" y1="0" x2="600" y2="0"/>
+          <path class="svg-line-2" d="M0.0,-0.0 L2.5,-0.8 L5.0,-1.6 L7.5,-2.4 L10.0,-3.1 L12.5,-3.9 L15.0,-4.7 L17.5,-5.5 L20.0,-6.2 L22.5,-7.0 L25.0,-7.8 L27.5,-8.5 L30.0,-9.3 L32.5,-10.0 L35.0,-10.8 L37.5,-11.5 L40.0,-12.2 L42.5,-12.9 L45.0,-13.6 L47.5,-14.3 L50.0,-15.0 L52.5,-15.7 L55.0,-16.3 L57.5,-17.0 L60.0,-17.6 L62.5,-18.3 L65.0,-18.9 L67.5,-19.5 L70.0,-20.1 L72.5,-20.7 L75.0,-21.2 L77.5,-21.8 L80.0,-22.3 L82.5,-22.8 L85.0,-23.3 L87.5,-23.8 L90.0,-24.3 L92.5,-24.7 L95.0,-25.2 L97.5,-25.6 L100.0,-26.0 L102.5,-26.4 L105.0,-26.7 L107.5,-27.1 L110.0,-27.4 L112.5,-27.7 L115.0,-28.0 L117.5,-28.3 L120.0,-28.5 L122.5,-28.8 L125.0,-29.0 L127.5,-29.2 L130.0,-29.3 L132.5,-29.5 L135.0,-29.6 L137.5,-29.7 L140.0,-29.8 L142.5,-29.9 L145.0,-30.0 L147.5,-30.0 L150.0,-30.0 L152.5,-30.0 L155.0,-30.0 L157.5,-29.9 L160.0,-29.8 L162.5,-29.7 L165.0,-29.6 L167.5,-29.5 L170.0,-29.3 L172.5,-29.2 L175.0,-29.0 L177.5,-28.8 L180.0,-28.5 L182.5,-28.3 L185.0,-28.0 L187.5,-27.7 L190.0,-27.4 L192.5,-27.1 L195.0,-26.7 L197.5,-26.4 L200.0,-26.0 L202.5,-25.6 L205.0,-25.2 L207.5,-24.7 L210.0,-24.3 L212.5,-23.8 L215.0,-23.3 L217.5,-22.8 L220.0,-22.3 L222.5,-21.8 L225.0,-21.2 L227.5,-20.7 L230.0,-20.1 L232.5,-19.5 L235.0,-18.9 L237.5,-18.3 L240.0,-17.6 L242.5,-17.0 L245.0,-16.3 L247.5,-15.7 L250.0,-15.0 L252.5,-14.3 L255.0,-13.6 L257.5,-12.9 L260.0,-12.2 L262.5,-11.5 L265.0,-10.8 L267.5,-10.0 L270.0,-9.3 L272.5,-8.5 L275.0,-7.8 L277.5,-7.0 L280.0,-6.2 L282.5,-5.5 L285.0,-4.7 L287.5,-3.9 L290.0,-3.1 L292.5,-2.4 L295.0,-1.6 L297.5,-0.8 L300.0,-0.0 L302.5,0.8 L305.0,1.6 L307.5,2.4 L310.0,3.1 L312.5,3.9 L315.0,4.7 L317.5,5.5 L320.0,6.2 L322.5,7.0 L325.0,7.8 L327.5,8.5 L330.0,9.3 L332.5,10.0 L335.0,10.8 L337.5,11.5 L340.0,12.2 L342.5,12.9 L345.0,13.6 L347.5,14.3 L350.0,15.0 L352.5,15.7 L355.0,16.3 L357.5,17.0 L360.0,17.6 L362.5,18.3 L365.0,18.9 L367.5,19.5 L370.0,20.1 L372.5,20.7 L375.0,21.2 L377.5,21.8 L380.0,22.3 L382.5,22.8 L385.0,23.3 L387.5,23.8 L390.0,24.3 L392.5,24.7 L395.0,25.2 L397.5,25.6 L400.0,26.0 L402.5,26.4 L405.0,26.7 L407.5,27.1 L410.0,27.4 L412.5,27.7 L415.0,28.0 L417.5,28.3 L420.0,28.5 L422.5,28.8 L425.0,29.0 L427.5,29.2 L430.0,29.3 L432.5,29.5 L435.0,29.6 L437.5,29.7 L440.0,29.8 L442.5,29.9 L445.0,30.0 L447.5,30.0 L450.0,30.0 L452.5,30.0 L455.0,30.0 L457.5,29.9 L460.0,29.8 L462.5,29.7 L465.0,29.6 L467.5,29.5 L470.0,29.3 L472.5,29.2 L475.0,29.0 L477.5,28.8 L480.0,28.5 L482.5,28.3 L485.0,28.0 L487.5,27.7 L490.0,27.4 L492.5,27.1 L495.0,26.7 L497.5,26.4 L500.0,26.0 L502.5,25.6 L505.0,25.2 L507.5,24.7 L510.0,24.3 L512.5,23.8 L515.0,23.3 L517.5,22.8 L520.0,22.3 L522.5,21.8 L525.0,21.2 L527.5,20.7 L530.0,20.1 L532.5,19.5 L535.0,18.9 L537.5,18.3 L540.0,17.6 L542.5,17.0 L545.0,16.3 L547.5,15.7 L550.0,15.0 L552.5,14.3 L555.0,13.6 L557.5,12.9 L560.0,12.2 L562.5,11.5 L565.0,10.8 L567.5,10.0 L570.0,9.3 L572.5,8.5 L575.0,7.8 L577.5,7.0 L580.0,6.2 L582.5,5.5 L585.0,4.7 L587.5,3.9 L590.0,3.1 L592.5,2.4 L595.0,1.6 L597.5,0.8 L600.0,0.0"/>
+        </g>
+        <!-- AM -->
+        <text class="svg-text" x="10" y="134">AM · ampiezza variabile</text>
+        <g transform="translate(0,200)">
+          <line class="svg-axis" x1="0" y1="0" x2="600" y2="0"/>
+          <path class="svg-dash" d="M0.0,-56.0 L2.5,-56.7 L5.0,-57.5 L7.5,-58.2 L10.0,-58.9 L12.5,-59.7 L15.0,-60.4 L17.5,-61.1 L20.0,-61.8 L22.5,-62.5 L25.0,-63.2 L27.5,-64.0 L30.0,-64.7 L32.5,-65.3 L35.0,-66.0 L37.5,-66.7 L40.0,-67.4 L42.5,-68.1 L45.0,-68.7 L47.5,-69.4 L50.0,-70.0 L52.5,-70.6 L55.0,-71.2 L57.5,-71.9 L60.0,-72.5 L62.5,-73.0 L65.0,-73.6 L67.5,-74.2 L70.0,-74.7 L72.5,-75.3 L75.0,-75.8 L77.5,-76.3 L80.0,-76.8 L82.5,-77.3 L85.0,-77.8 L87.5,-78.2 L90.0,-78.7 L92.5,-79.1 L95.0,-79.5 L97.5,-79.9 L100.0,-80.2 L102.5,-80.6 L105.0,-80.9 L107.5,-81.3 L110.0,-81.6 L112.5,-81.9 L115.0,-82.1 L117.5,-82.4 L120.0,-82.6 L122.5,-82.8 L125.0,-83.0 L127.5,-83.2 L130.0,-83.4 L132.5,-83.5 L135.0,-83.7 L137.5,-83.8 L140.0,-83.8 L142.5,-83.9 L145.0,-84.0 L147.5,-84.0 L150.0,-84.0 L152.5,-84.0 L155.0,-84.0 L157.5,-83.9 L160.0,-83.8 L162.5,-83.8 L165.0,-83.7 L167.5,-83.5 L170.0,-83.4 L172.5,-83.2 L175.0,-83.0 L177.5,-82.8 L180.0,-82.6 L182.5,-82.4 L185.0,-82.1 L187.5,-81.9 L190.0,-81.6 L192.5,-81.3 L195.0,-80.9 L197.5,-80.6 L200.0,-80.2 L202.5,-79.9 L205.0,-79.5 L207.5,-79.1 L210.0,-78.7 L212.5,-78.2 L215.0,-77.8 L217.5,-77.3 L220.0,-76.8 L222.5,-76.3 L225.0,-75.8 L227.5,-75.3 L230.0,-74.7 L232.5,-74.2 L235.0,-73.6 L237.5,-73.0 L240.0,-72.5 L242.5,-71.9 L245.0,-71.2 L247.5,-70.6 L250.0,-70.0 L252.5,-69.4 L255.0,-68.7 L257.5,-68.1 L260.0,-67.4 L262.5,-66.7 L265.0,-66.0 L267.5,-65.3 L270.0,-64.7 L272.5,-64.0 L275.0,-63.2 L277.5,-62.5 L280.0,-61.8 L282.5,-61.1 L285.0,-60.4 L287.5,-59.7 L290.0,-58.9 L292.5,-58.2 L295.0,-57.5 L297.5,-56.7 L300.0,-56.0 L302.5,-55.3 L305.0,-54.5 L307.5,-53.8 L310.0,-53.1 L312.5,-52.3 L315.0,-51.6 L317.5,-50.9 L320.0,-50.2 L322.5,-49.5 L325.0,-48.8 L327.5,-48.0 L330.0,-47.3 L332.5,-46.7 L335.0,-46.0 L337.5,-45.3 L340.0,-44.6 L342.5,-43.9 L345.0,-43.3 L347.5,-42.6 L350.0,-42.0 L352.5,-41.4 L355.0,-40.8 L357.5,-40.1 L360.0,-39.5 L362.5,-39.0 L365.0,-38.4 L367.5,-37.8 L370.0,-37.3 L372.5,-36.7 L375.0,-36.2 L377.5,-35.7 L380.0,-35.2 L382.5,-34.7 L385.0,-34.2 L387.5,-33.8 L390.0,-33.3 L392.5,-32.9 L395.0,-32.5 L397.5,-32.1 L400.0,-31.8 L402.5,-31.4 L405.0,-31.1 L407.5,-30.7 L410.0,-30.4 L412.5,-30.1 L415.0,-29.9 L417.5,-29.6 L420.0,-29.4 L422.5,-29.2 L425.0,-29.0 L427.5,-28.8 L430.0,-28.6 L432.5,-28.5 L435.0,-28.3 L437.5,-28.2 L440.0,-28.2 L442.5,-28.1 L445.0,-28.0 L447.5,-28.0 L450.0,-28.0 L452.5,-28.0 L455.0,-28.0 L457.5,-28.1 L460.0,-28.2 L462.5,-28.2 L465.0,-28.3 L467.5,-28.5 L470.0,-28.6 L472.5,-28.8 L475.0,-29.0 L477.5,-29.2 L480.0,-29.4 L482.5,-29.6 L485.0,-29.9 L487.5,-30.1 L490.0,-30.4 L492.5,-30.7 L495.0,-31.1 L497.5,-31.4 L500.0,-31.8 L502.5,-32.1 L505.0,-32.5 L507.5,-32.9 L510.0,-33.3 L512.5,-33.8 L515.0,-34.2 L517.5,-34.7 L520.0,-35.2 L522.5,-35.7 L525.0,-36.2 L527.5,-36.7 L530.0,-37.3 L532.5,-37.8 L535.0,-38.4 L537.5,-39.0 L540.0,-39.5 L542.5,-40.1 L545.0,-40.8 L547.5,-41.4 L550.0,-42.0 L552.5,-42.6 L555.0,-43.3 L557.5,-43.9 L560.0,-44.6 L562.5,-45.3 L565.0,-46.0 L567.5,-46.7 L570.0,-47.3 L572.5,-48.0 L575.0,-48.8 L577.5,-49.5 L580.0,-50.2 L582.5,-50.9 L585.0,-51.6 L587.5,-52.3 L590.0,-53.1 L592.5,-53.8 L595.0,-54.5 L597.5,-55.3 L600.0,-56.0 M0.0,56.0 L2.5,56.7 L5.0,57.5 L7.5,58.2 L10.0,58.9 L12.5,59.7 L15.0,60.4 L17.5,61.1 L20.0,61.8 L22.5,62.5 L25.0,63.2 L27.5,64.0 L30.0,64.7 L32.5,65.3 L35.0,66.0 L37.5,66.7 L40.0,67.4 L42.5,68.1 L45.0,68.7 L47.5,69.4 L50.0,70.0 L52.5,70.6 L55.0,71.2 L57.5,71.9 L60.0,72.5 L62.5,73.0 L65.0,73.6 L67.5,74.2 L70.0,74.7 L72.5,75.3 L75.0,75.8 L77.5,76.3 L80.0,76.8 L82.5,77.3 L85.0,77.8 L87.5,78.2 L90.0,78.7 L92.5,79.1 L95.0,79.5 L97.5,79.9 L100.0,80.2 L102.5,80.6 L105.0,80.9 L107.5,81.3 L110.0,81.6 L112.5,81.9 L115.0,82.1 L117.5,82.4 L120.0,82.6 L122.5,82.8 L125.0,83.0 L127.5,83.2 L130.0,83.4 L132.5,83.5 L135.0,83.7 L137.5,83.8 L140.0,83.8 L142.5,83.9 L145.0,84.0 L147.5,84.0 L150.0,84.0 L152.5,84.0 L155.0,84.0 L157.5,83.9 L160.0,83.8 L162.5,83.8 L165.0,83.7 L167.5,83.5 L170.0,83.4 L172.5,83.2 L175.0,83.0 L177.5,82.8 L180.0,82.6 L182.5,82.4 L185.0,82.1 L187.5,81.9 L190.0,81.6 L192.5,81.3 L195.0,80.9 L197.5,80.6 L200.0,80.2 L202.5,79.9 L205.0,79.5 L207.5,79.1 L210.0,78.7 L212.5,78.2 L215.0,77.8 L217.5,77.3 L220.0,76.8 L222.5,76.3 L225.0,75.8 L227.5,75.3 L230.0,74.7 L232.5,74.2 L235.0,73.6 L237.5,73.0 L240.0,72.5 L242.5,71.9 L245.0,71.2 L247.5,70.6 L250.0,70.0 L252.5,69.4 L255.0,68.7 L257.5,68.1 L260.0,67.4 L262.5,66.7 L265.0,66.0 L267.5,65.3 L270.0,64.7 L272.5,64.0 L275.0,63.2 L277.5,62.5 L280.0,61.8 L282.5,61.1 L285.0,60.4 L287.5,59.7 L290.0,58.9 L292.5,58.2 L295.0,57.5 L297.5,56.7 L300.0,56.0 L302.5,55.3 L305.0,54.5 L307.5,53.8 L310.0,53.1 L312.5,52.3 L315.0,51.6 L317.5,50.9 L320.0,50.2 L322.5,49.5 L325.0,48.8 L327.5,48.0 L330.0,47.3 L332.5,46.7 L335.0,46.0 L337.5,45.3 L340.0,44.6 L342.5,43.9 L345.0,43.3 L347.5,42.6 L350.0,42.0 L352.5,41.4 L355.0,40.8 L357.5,40.1 L360.0,39.5 L362.5,39.0 L365.0,38.4 L367.5,37.8 L370.0,37.3 L372.5,36.7 L375.0,36.2 L377.5,35.7 L380.0,35.2 L382.5,34.7 L385.0,34.2 L387.5,33.8 L390.0,33.3 L392.5,32.9 L395.0,32.5 L397.5,32.1 L400.0,31.8 L402.5,31.4 L405.0,31.1 L407.5,30.7 L410.0,30.4 L412.5,30.1 L415.0,29.9 L417.5,29.6 L420.0,29.4 L422.5,29.2 L425.0,29.0 L427.5,28.8 L430.0,28.6 L432.5,28.5 L435.0,28.3 L437.5,28.2 L440.0,28.2 L442.5,28.1 L445.0,28.0 L447.5,28.0 L450.0,28.0 L452.5,28.0 L455.0,28.0 L457.5,28.1 L460.0,28.2 L462.5,28.2 L465.0,28.3 L467.5,28.5 L470.0,28.6 L472.5,28.8 L475.0,29.0 L477.5,29.2 L480.0,29.4 L482.5,29.6 L485.0,29.9 L487.5,30.1 L490.0,30.4 L492.5,30.7 L495.0,31.1 L497.5,31.4 L500.0,31.8 L502.5,32.1 L505.0,32.5 L507.5,32.9 L510.0,33.3 L512.5,33.8 L515.0,34.2 L517.5,34.7 L520.0,35.2 L522.5,35.7 L525.0,36.2 L527.5,36.7 L530.0,37.3 L532.5,37.8 L535.0,38.4 L537.5,39.0 L540.0,39.5 L542.5,40.1 L545.0,40.8 L547.5,41.4 L550.0,42.0 L552.5,42.6 L555.0,43.3 L557.5,43.9 L560.0,44.6 L562.5,45.3 L565.0,46.0 L567.5,46.7 L570.0,47.3 L572.5,48.0 L575.0,48.8 L577.5,49.5 L580.0,50.2 L582.5,50.9 L585.0,51.6 L587.5,52.3 L590.0,53.1 L592.5,53.8 L595.0,54.5 L597.5,55.3 L600.0,56.0"/>
+          <path class="svg-line" d="M0.0,-56.0 L2.5,-53.0 L5.0,-42.7 L7.5,-26.4 L10.0,-6.2 L12.5,15.4 L15.0,35.5 L17.5,51.2 L20.0,60.5 L22.5,61.8 L25.0,54.8 L27.5,40.2 L30.0,20.0 L32.5,-3.4 L35.0,-26.9 L37.5,-47.2 L40.0,-61.6 L42.5,-68.0 L45.0,-65.3 L47.5,-53.9 L50.0,-35.0 L52.5,-11.0 L55.0,14.8 L57.5,39.1 L60.0,58.6 L62.5,70.6 L65.0,73.2 L67.5,66.1 L70.0,50.0 L72.5,27.0 L75.0,0.0 L77.5,-27.3 L80.0,-51.4 L82.5,-68.9 L85.0,-77.3 L87.5,-75.5 L90.0,-63.6 L92.5,-43.1 L95.0,-16.5 L97.5,12.5 L100.0,40.1 L102.5,62.6 L105.0,77.0 L107.5,81.2 L110.0,74.5 L112.5,57.9 L115.0,33.4 L117.5,4.3 L120.0,-25.5 L122.5,-52.1 L125.0,-71.9 L127.5,-82.2 L130.0,-81.6 L132.5,-70.1 L135.0,-49.2 L137.5,-21.7 L140.0,8.8 L142.5,38.1 L145.0,62.4 L147.5,78.4 L150.0,84.0 L152.5,78.4 L155.0,62.4 L157.5,38.1 L160.0,8.8 L162.5,-21.7 L165.0,-49.2 L167.5,-70.1 L170.0,-81.6 L172.5,-82.2 L175.0,-71.9 L177.5,-52.1 L180.0,-25.5 L182.5,4.3 L185.0,33.4 L187.5,57.9 L190.0,74.5 L192.5,81.2 L195.0,77.0 L197.5,62.6 L200.0,40.1 L202.5,12.5 L205.0,-16.5 L207.5,-43.1 L210.0,-63.6 L212.5,-75.5 L215.0,-77.3 L217.5,-68.9 L220.0,-51.4 L222.5,-27.3 L225.0,0.0 L227.5,27.0 L230.0,50.0 L232.5,66.1 L235.0,73.2 L237.5,70.6 L240.0,58.6 L242.5,39.1 L245.0,14.8 L247.5,-11.0 L250.0,-35.0 L252.5,-53.9 L255.0,-65.3 L257.5,-68.0 L260.0,-61.6 L262.5,-47.2 L265.0,-26.9 L267.5,-3.4 L270.0,20.0 L272.5,40.2 L275.0,54.8 L277.5,61.8 L280.0,60.5 L282.5,51.2 L285.0,35.5 L287.5,15.4 L290.0,-6.2 L292.5,-26.4 L295.0,-42.7 L297.5,-53.0 L300.0,-56.0 L302.5,-51.6 L305.0,-40.5 L307.5,-24.4 L310.0,-5.5 L312.5,13.5 L315.0,30.3 L317.5,42.7 L320.0,49.1 L322.5,48.9 L325.0,42.2 L327.5,30.2 L330.0,14.6 L332.5,-2.4 L335.0,-18.7 L337.5,-32.0 L340.0,-40.8 L342.5,-43.9 L345.0,-41.2 L347.5,-33.1 L350.0,-21.0 L352.5,-6.5 L355.0,8.5 L357.5,21.9 L360.0,32.0 L362.5,37.6 L365.0,38.2 L367.5,33.7 L370.0,24.9 L372.5,13.2 L375.0,0.0 L377.5,-12.8 L380.0,-23.5 L382.5,-30.9 L385.0,-34.1 L387.5,-32.6 L390.0,-27.0 L392.5,-17.9 L395.0,-6.8 L397.5,5.0 L400.0,15.9 L402.5,24.4 L405.0,29.5 L407.5,30.7 L410.0,27.8 L412.5,21.3 L415.0,12.1 L417.5,1.5 L420.0,-9.1 L422.5,-18.3 L425.0,-25.1 L427.5,-28.4 L430.0,-28.0 L432.5,-23.9 L435.0,-16.7 L437.5,-7.3 L440.0,2.9 L442.5,12.8 L445.0,20.8 L447.5,26.1 L450.0,28.0 L452.5,26.1 L455.0,20.8 L457.5,12.8 L460.0,2.9 L462.5,-7.3 L465.0,-16.7 L467.5,-23.9 L470.0,-28.0 L472.5,-28.4 L475.0,-25.1 L477.5,-18.3 L480.0,-9.1 L482.5,1.5 L485.0,12.1 L487.5,21.3 L490.0,27.8 L492.5,30.7 L495.0,29.5 L497.5,24.4 L500.0,15.9 L502.5,5.0 L505.0,-6.8 L507.5,-17.9 L510.0,-27.0 L512.5,-32.6 L515.0,-34.1 L517.5,-30.9 L520.0,-23.5 L522.5,-12.8 L525.0,-0.0 L527.5,13.2 L530.0,24.9 L532.5,33.7 L535.0,38.2 L537.5,37.6 L540.0,32.0 L542.5,21.9 L545.0,8.5 L547.5,-6.5 L550.0,-21.0 L552.5,-33.1 L555.0,-41.2 L557.5,-43.9 L560.0,-40.8 L562.5,-32.0 L565.0,-18.7 L567.5,-2.4 L570.0,14.6 L572.5,30.2 L575.0,42.2 L577.5,48.9 L580.0,49.1 L582.5,42.7 L585.0,30.3 L587.5,13.5 L590.0,-5.5 L592.5,-24.4 L595.0,-40.5 L597.5,-51.6 L600.0,-56.0"/>
+        </g>
+        <!-- FM -->
+        <text class="svg-text" x="10" y="282">FM · frequenza variabile, ampiezza costante</text>
+        <g transform="translate(0,350)">
+          <line class="svg-axis" x1="0" y1="0" x2="600" y2="0"/>
+          <path class="svg-line" d="M0.0,-56.0 L2.5,-52.3 L5.0,-41.4 L7.5,-24.8 L10.0,-4.6 L12.5,16.3 L15.0,35.1 L17.5,48.9 L20.0,55.6 L22.5,54.0 L25.0,44.2 L27.5,27.6 L30.0,6.6 L32.5,-15.6 L35.0,-35.4 L37.5,-49.6 L40.0,-55.9 L42.5,-52.8 L45.0,-41.0 L47.5,-22.1 L50.0,0.7 L52.5,23.5 L55.0,42.2 L57.5,53.6 L60.0,55.5 L62.5,47.3 L65.0,30.4 L67.5,7.9 L70.0,-16.2 L72.5,-37.4 L75.0,-51.6 L77.5,-55.9 L80.0,-49.5 L82.5,-33.4 L85.0,-10.7 L87.5,14.2 L90.0,36.3 L92.5,51.3 L95.0,56.0 L97.5,49.2 L100.0,32.4 L102.5,8.9 L105.0,-16.5 L107.5,-38.6 L110.0,-52.6 L112.5,-55.6 L115.0,-46.9 L117.5,-28.3 L120.0,-3.6 L122.5,22.0 L125.0,42.8 L127.5,54.5 L130.0,54.4 L132.5,42.6 L135.0,21.6 L137.5,-4.2 L140.0,-29.0 L142.5,-47.6 L145.0,-55.8 L147.5,-51.9 L150.0,-36.6 L152.5,-13.4 L155.0,12.8 L157.5,36.1 L160.0,51.6 L162.5,55.9 L165.0,48.0 L167.5,29.7 L170.0,5.0 L172.5,-20.7 L175.0,-41.9 L177.5,-54.2 L180.0,-54.8 L182.5,-43.7 L185.0,-23.4 L187.5,1.8 L190.0,26.6 L192.5,45.8 L195.0,55.3 L197.5,53.4 L200.0,40.4 L202.5,19.2 L205.0,-5.9 L207.5,-29.7 L210.0,-47.4 L212.5,-55.7 L215.0,-52.8 L217.5,-39.6 L220.0,-18.7 L222.5,5.8 L225.0,29.0 L227.5,46.7 L230.0,55.4 L232.5,53.7 L235.0,42.1 L237.5,22.8 L240.0,-0.6 L242.5,-23.7 L245.0,-42.5 L247.5,-53.7 L250.0,-55.5 L252.5,-47.7 L255.0,-31.8 L257.5,-10.6 L260.0,12.2 L262.5,32.9 L265.0,48.1 L267.5,55.5 L270.0,54.1 L272.5,44.2 L275.0,27.5 L277.5,6.8 L280.0,-14.8 L282.5,-34.1 L285.0,-48.3 L287.5,-55.4 L290.0,-54.5 L292.5,-46.1 L295.0,-31.3 L297.5,-12.3 L300.0,8.1 L302.5,27.4 L305.0,42.9 L307.5,52.8 L310.0,56.0 L312.5,52.1 L315.0,41.9 L317.5,26.7 L320.0,8.4 L322.5,-10.7 L325.0,-28.5 L327.5,-42.9 L330.0,-52.3 L332.5,-56.0 L335.0,-53.5 L337.5,-45.4 L340.0,-32.5 L342.5,-16.3 L345.0,1.4 L347.5,18.8 L350.0,34.2 L352.5,46.2 L355.0,53.7 L357.5,56.0 L360.0,53.1 L362.5,45.3 L365.0,33.5 L367.5,18.7 L370.0,2.4 L372.5,-14.0 L375.0,-29.0 L377.5,-41.6 L380.0,-50.6 L382.5,-55.3 L385.0,-55.5 L387.5,-51.3 L390.0,-43.0 L392.5,-31.3 L395.0,-17.3 L397.5,-2.0 L400.0,13.3 L402.5,27.6 L405.0,39.8 L407.5,48.9 L410.0,54.4 L412.5,56.0 L415.0,53.5 L417.5,47.1 L420.0,37.5 L422.5,25.2 L425.0,11.2 L427.5,-3.6 L430.0,-18.1 L432.5,-31.3 L435.0,-42.3 L437.5,-50.4 L440.0,-55.0 L442.5,-55.9 L445.0,-52.9 L447.5,-46.3 L450.0,-36.6 L452.5,-24.4 L455.0,-10.5 L457.5,4.1 L460.0,18.4 L462.5,31.5 L465.0,42.5 L467.5,50.5 L470.0,55.1 L472.5,55.8 L475.0,52.7 L477.5,45.8 L480.0,35.7 L482.5,23.1 L485.0,8.7 L487.5,-6.3 L490.0,-20.9 L492.5,-34.1 L495.0,-44.8 L497.5,-52.2 L500.0,-55.8 L502.5,-55.1 L505.0,-50.2 L507.5,-41.4 L510.0,-29.3 L512.5,-14.8 L515.0,0.9 L517.5,16.7 L520.0,31.2 L522.5,43.2 L525.0,51.6 L527.5,55.7 L530.0,55.0 L532.5,49.5 L535.0,39.5 L537.5,26.0 L540.0,9.9 L542.5,-7.1 L545.0,-23.6 L547.5,-38.0 L550.0,-48.8 L552.5,-54.9 L555.0,-55.6 L557.5,-50.6 L560.0,-40.4 L562.5,-25.9 L565.0,-8.5 L567.5,9.9 L570.0,27.3 L572.5,41.9 L575.0,51.9 L577.5,55.9 L580.0,53.6 L582.5,44.8 L585.0,30.6 L587.5,12.6 L590.0,-7.1 L592.5,-26.0 L595.0,-41.8 L597.5,-52.3 L600.0,-56.0"/>
+        </g>
+      </svg>
+      <figcaption>Schema qualitativo. Linea tratteggiata: inviluppo AM, che riproduce il messaggio. In FM la frequenza istantanea segue il messaggio, mentre l'ampiezza resta costante.</figcaption>
+    </figure>
+    <h3>Modulazione di ampiezza (AM)</h3>
+    <div class="formula"><span class="label">Segnale modulato con indice di modulazione m = A<sub>m</sub> / A<sub>c</sub></span>s(t) = A<sub>c</sub> · [1 + m · x(t)] · cos(ω<sub>c</sub> t)</div>
+    <ul class="clean">
+      <li><strong>Inviluppo:</strong> l'ampiezza della portante segue il messaggio.</li>
+      <li><strong>Banda:</strong> doppia banda laterale, occupazione B<sub>AM</sub> = 2 f<sub>m</sub>.</li>
+      <li><strong>Vulnerabilità:</strong> il rumore impulsivo (fulmini, motori) altera l'ampiezza, quindi si sente come "crack" nel segnale.</li>
+    </ul>
+    <div class="note"><strong>Perché m ≤ 1?</strong> Se m &gt; 1 l'inviluppo attraversa lo zero e il messaggio si distorce (sovramodulazione).</div>
+    <h3>Modulazione di frequenza (FM)</h3>
+    <div class="formula"><span class="label">Frequenza istantanea con deviazione Δf</span>f<sub>i</sub>(t) = f<sub>c</sub> + Δf · x(t)</div>
+    <ul class="clean">
+      <li><strong>Deviazione:</strong> la frequenza della portante varia col segnale.</li>
+      <li><strong>Ampiezza costante:</strong> insensibile al fading e alla maggior parte dei disturbi che alterano l'ampiezza.</li>
+      <li><strong>Immunità:</strong> altissima reiezione dei disturbi atmosferici, a costo di una banda più larga.</li>
+    </ul>
+    <div class="formula"><span class="label">Regola di Carson (banda approssimata)</span>B<sub>FM</sub> ≈ 2 · (Δf + f<sub>m</sub>)</div>
+    <div class="example">
+      <strong>Esempio.</strong> La radio FM commerciale usa Δf = 75 kHz e f<sub>m</sub> = 15 kHz: B ≈ 2 · (75 + 15) = <strong>180 kHz</strong>. Un'AM con f<sub>m</sub> = 5 kHz occupa solo 10 kHz.
+    </div>
+    <h3>Confronto AM / FM</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Caratteristica</th><th>AM</th><th>FM</th></tr></thead>
+        <tbody>
+          <tr><td>Variazione</td><td>Ampiezza</td><td>Frequenza</td></tr>
+          <tr><td>Circuiti</td><td>Semplici</td><td>Più complessi</td></tr>
+          <tr><td>Rumore</td><td>Vulnerabile alle interferenze atmosferiche</td><td>Alta immunità al rumore</td></tr>
+          <tr><td>Banda</td><td>Ridotta</td><td>Maggiore occupazione di banda</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Demodulazione: estrarre il messaggio</h3>
+    <p>In ricezione il segnale viene prima sintonizzato e filtrato, poi demodulato.</p>
+    <div class="grid">
+      <article class="card">
+        <span class="tag">Demodulatore AM</span>
+        <h4>Rivelatore di picco</h4>
+        <p>Un diodo raddrizza la semionda (rettificazione), e un condensatore C con resistenza R, in parallelo, forma un filtro passa-basso che estrae l'inviluppo.</p>
+        <div class="formula"><span class="label">Condizione sulla costante di tempo</span>1/f<sub>c</sub> ≪ RC ≪ 1/f<sub>m</sub></div>
+      </article>
+      <article class="card">
+        <span class="tag">Demodulatore FM</span>
+        <h4>Loop ad aggancio di fase (PLL)</h4>
+        <p>Un comparatore di fase confronta il segnale in ingresso con quello del VCO (oscillatore controllato in tensione). La tensione d'errore, filtrata, ricrea il messaggio audio.</p>
+      </article>
+    </div>
+    <div class="example">
+      <strong>Esempio di progetto.</strong> Per un'AM con f<sub>c</sub> = 1 MHz e f<sub>m</sub> = 5 kHz, la condizione dà 1 µs ≪ RC ≪ 200 µs. Scegliendo RC ≈ 20 µs, per esempio R = 1 kΩ e C = 20 nF, si rispetta il vincolo.
+    </div>
+    <div class="quiz">
+      <p class="quiz-title">Mettiti alla prova</p>
+      <details>
+        <summary>In un'AM con m = 0,5, di quanto varia l'ampiezza della portante rispetto a quella a riposo?</summary>
+        <p>L'ampiezza oscilla tra A<sub>c</sub>(1 − 0,5) e A<sub>c</sub>(1 + 0,5), cioè tra il 50 % e il 150 % del valore a riposo.</p>
+      </details>
+      <details>
+        <summary>Perché la FM è più immune ai disturbi impulsivi?</summary>
+        <p>Perché l'informazione sta nella frequenza. Un disturbo impulsivo altera soprattutto l'ampiezza, che il ricevitore FM può limitare (limiter) prima della demodulazione.</p>
+      </details>
+    </div>
+  </div>
+</section>
+<!-- ================= 5. LABORATORIO ================= -->
+<section class="topic" id="laboratorio" aria-labelledby="lab-title">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-kicker">Sezione 5 · Attività pratica · 5 ore</p>
+      <h2 id="lab-title">Laboratorio di ricerca</h2>
+      <p>Dalla teoria al campo. Le quattro attività usano strumenti accessibili: mappe, analizzatori di spettro e ricevitori SDR economici.</p>
+    </div>
+    <div class="grid">
+      <article class="card lab-card">
+        <span class="num">01</span>
+        <h4>Mappatura reti</h4>
+        <p>Individuare le torri radiomobili della zona e le loro antenne settoriali. Dove sono posizionate, e perché?</p>
+        <p><em>Strumenti:</em> mappe pubbliche e osservazione diretta.</p>
+      </article>
+      <article class="card lab-card">
+        <span class="num">02</span>
+        <h4>Analisi dello spettro</h4>
+        <p>Misurare le interferenze sui canali Wi-Fi locali (2,4 GHz e 5 GHz). Quali canali sono più affollati?</p>
+        <p><em>Strumenti:</em> app per l'analisi delle reti Wi-Fi o analizzatore di spettro.</p>
+      </article>
+      <article class="card lab-card">
+        <span class="num">03</span>
+        <h4>SDR pratico</h4>
+        <p>Decodificare segnali aperti e non cifrati tramite una Software Defined Radio. Il segnale è reso visibile e ascoltabile dal computer.</p>
+        <p><em>Strumenti:</em> ricevitore SDR a basso costo e software gratuito.</p>
+      </article>
+      <article class="card lab-card">
+        <span class="num">04</span>
+        <h4>Costruzione di una Yagi</h4>
+        <p>Progettare e costruire un'antenna direttiva fai-da-te, poi misurarne il guadagno con un confronto relativo.</p>
+        <p><em>Riferimento di massima:</em> elemento attivo ≈ 0,47 λ, riflettore circa il 5 % più lungo, direttori circa il 5 % più corti.</p>
+      </article>
+    </div>
+    <div class="warning">
+      <strong>Sicurezza e regole.</strong> Non trasmettere mai senza antenna collegata: il trasmettitore può danneggiarsi. Nelle attività di ascolto ricevi solo segnali aperti e non cifrati, senza interferire con servizi altrui. Rispetta la normativa vigente sulle radiofrequenze e i limiti di esposizione.
+    </div>
+    <h3>Bibliografia e fonti</h3>
+    <ul class="clean biblio">
+      <li><strong>Testi scolastici:</strong> <em>Manuale di Telecomunicazioni per Istituti Tecnici</em> (Vol. 2, come indicato nella presentazione).</li>
+      <li><strong>Standard tecnici:</strong> normative IEEE su irradiazione, modulazioni RF e sicurezza elettromagnetica.</li>
+      <li><strong>Metodologia:</strong> sintesi strutturata assistita da AI (novembre 2026), come riportato nella presentazione originale.</li>
+    </ul>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <p><strong>L'Invisibile in Rete</strong> · Modulo 5 · Linee, Antenne e Telecomunicazioni</p>
+    <p>Materiale didattico per la classe 5ª ITIS (Elettronica). Il sito è statico: nessun dato personale viene raccolto.</p>
+    <p><a href="#top">↑ Torna all'inizio</a></p>
+  </div>
+</footer>
+<script>
+  // ---- Evidenzia la sezione corrente nel menu ----
+  (function () {
+    var links = document.querySelectorAll('.nav-links a');
+    var map = {};
+    links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+    if (!('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var a = map[e.target.id];
+        if (a && e.isIntersecting) {
+          links.forEach(function (l) { l.removeAttribute('aria-current'); });
+          a.setAttribute('aria-current', 'true');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    Object.keys(map).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) io.observe(el);
+    });
+  })();
+  // ---- Calcolatore di adattamento (ROS) ----
+  (function () {
+    var zl = document.getElementById('zl'), z0 = document.getElementById('z0');
+    if (!zl || !z0) return;
+    function fix(x, d) { return isFinite(x) ? x.toFixed(d) : '∞'; }
+    function update() {
+      var ZL = parseFloat(zl.value), Z0 = parseFloat(z0.value);
+      if (!(ZL > 0) || !(Z0 > 0)) {
+        document.getElementById('out-gamma').textContent = '—';
+        document.getElementById('out-ros').textContent = '—';
+        document.getElementById('out-pref').textContent = '—';
+        document.getElementById('out-zt').textContent = '—';
+        return;
+      }
+      var g = Math.abs((ZL - Z0) / (ZL + Z0));
+      var ros = g < 1 ? (1 + g) / (1 - g) : Infinity;
+      var pref = g * g * 100;
+      var zt = Math.sqrt(ZL * Z0);
+      document.getElementById('out-gamma').textContent = fix(g, 3);
+      document.getElementById('out-ros').textContent = fix(ros, 2);
+      document.getElementById('out-pref').textContent = fix(pref, 1) + ' %';
+      document.getElementById('out-zt').textContent = fix(zt, 1);
+    }
+    zl.addEventListener('input', update);
+    z0.addEventListener('input', update);
+    update();
+  })();
+  // ---- Calcolatore EIRP ----
+  (function () {
+    var pt = document.getElementById('pt'), gi = document.getElementById('gi'), lc = document.getElementById('lc');
+    if (!pt || !gi || !lc) return;
+    function update() {
+      var P = parseFloat(pt.value), G = parseFloat(gi.value), L = parseFloat(lc.value);
+      if (!(P > 0) || isNaN(G) || isNaN(L)) {
+        ['out-eirp-dbw', 'out-eirp-dbm', 'out-eirp-w'].forEach(function (id) {
+          document.getElementById(id).textContent = '—';
+        });
+        return;
+      }
+      var dbw = 10 * Math.log10(P) + G - L;
+      document.getElementById('out-eirp-dbw').textContent = dbw.toFixed(1) + ' dBW';
+      document.getElementById('out-eirp-dbm').textContent = (dbw + 30).toFixed(1) + ' dBm';
+      document.getElementById('out-eirp-w').textContent = Math.pow(10, dbw / 10).toFixed(1) + ' W';
+    }
+    [pt, gi, lc].forEach(function (el) { el.addEventListener('input', update); });
+    update();
+  })();
+</script>
+</body>
+</html>
